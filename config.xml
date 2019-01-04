@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="bitmi.com.br" version="0.0.6" versionCode = "160" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Wisecoin</name>
+    <description>
+        Wisecoin
+    </description>
+    <author email="contato@mitz.com.br" href="https://bitmi.com.br">
+        Wisecoin
+    </author>
+    <content src="index.html" />
+    <splash src="images/icon.png" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <icon src="images/icon.png"/>
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <icon src="assets/icons/60.png" platform="ios" width="60" height="60" />
+        <icon src="assets/icons/120.png" platform="ios" width="120" height="120" />
+        <icon src="assets/icons/152.png" platform="ios" width="152" height="152" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

@@ -1,0 +1,48 @@
+<style type="text/css">
+    .small, small {
+    color: red;
+}
+</style>
+<div class="page-ath-wrap">
+    <div class="page-ath-content">
+        <div class="page-ath-header">
+            <img src="images/logo.png" alt="logo"></a>
+        </div>
+        <div class="page-ath-form">
+            <h2 class="page-ath-heading">Sign up <small>Create New Wise Account</small></h2>
+            <form id="FormCadastro" name="FormCadastro">
+
+                <div style="opacity: 0; position: fixed; top:0"><input type="email" name=""><input type="password" name=""></div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" ng-model="data.email" required="true" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nome" pattern="^[A-Za-z0-9_.]{1,35}$" class="form-control" ng-model="data.nome" required="true"  placeholder="Username"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="senha" class="form-control" ng-model="data.senha" required="true" placeholder="Password" />
+                </div>
+                <button class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            <div class="sap-text"><span>Or Sign In With</span></div>
+            <ul class="row guttar-20px guttar-vr-20px">
+                <li class="col"><button href="#" class="btn btn-outline btn-dark btn-facebook btn-block" ng-click='fb_login()'><em class="fab fa-facebook-f"></em><span>Facebook</span></button></li>
+            </ul>
+            <br><div class="form-note">Already have an account ? <a ui-sref="login"> <strong>Sign in</strong></a></div>
+
+        </div>
+        <div class="page-ath-footer">
+            <ul class="footer-links">
+                <li><a href="regular-page.html">Privacy Policy</a></li>
+                <li><a href="regular-page.html">Terms</a></li>
+                <li>&copy; 2018 Wisecoin.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-ath-gfx">
+        <div class="w-100 d-flex justify-content-center">
+            <div class="col-md-8 col-xl-5"><img src="images/ath-gfx.png" alt="image"></div>
+        </div>
+    </div>
+</div>
+

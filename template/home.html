@@ -1,0 +1,213 @@
+<!-- .topbar-wrap -->
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="token-statistics card card-token height-auto">
+                    <div class="card-innr">
+                        <div class="token-balance token-balance-with-icon">
+                            <div class="token-balance-icon"><img src="images/logo-light-sm.png" alt="logo"></div>
+                            <div class="token-balance-text">
+                                <h6 class="card-sub-title">Wisecoin Balance</h6><span class="lead">{{user_data.wisecoin | number:6}} <span>WSC</span></span>
+                            </div>
+                        </div>
+                        <div class="token-balance token-balance-s2">
+                            <h6 class="card-sub-title">Your Contribution</h6>
+                            <ul class="token-balance-list">
+                                <li class="token-balance-sub"><span class="lead">{{cont | currency}}</span><span class="sub">USD</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .col -->
+            <div class="col-lg-8">
+                <div class="token-information card card-full-height">
+                    <div class="row no-gutters height-100">
+                        <div class="col-md-6 text-center">
+                            <div class="token-info"><img class="token-info-icon" src="images/logo-sm.png" alt="logo-sm">
+                                <div class="gaps-2x"></div>
+                                <h1 class="token-info-head text-light">1 BTC = {{config.cota/config.wise_cota | number:4}} USD</h1>
+                                <h1 class="token-info-head text-light">1 WSC = {{config.wise_cota | number:4}} WSC</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="token-info bdr-tl">
+                                <div>
+                                    <ul class="token-info-list">
+                                        <li><span>Token Name:</span>Wisecoin</li>
+                                        <li><span>Ticket Symbol:</span>WSC</li>
+                                    </ul> 
+                                    <!-- <a href="#" class="btn btn-primary"><em class="fas fa-download mr-3"></em>Download Whitepaper</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- .col -->
+            <div class="col-xl-8 col-lg-7">
+                <div class="token-transaction card card-full-height">
+                    <div class="card-innr">
+                        <div class="card-head has-aside">
+                            <h4 class="card-title">Transaction</h4>
+                            <div class="card-opt"><a href="transactions.html" class="link ucap">View ALL <em class="fas fa-angle-right ml-2"></em></a></div>
+                        </div>
+                        <table class="table tnx-table">
+                            <thead>
+                                <tr>
+                                    <th>WSC Tokens</th>
+                                    <th>Amount</th>
+                                    <th>Quote</th>
+                                    <th class="">Date</th>
+                                    <th class="tnx-type">
+                                        <div class="tnx-type-text"></div>
+                                    </th>
+                                </tr>
+                                <!-- tr -->
+                            </thead>
+                            <!-- thead -->
+                            <tbody>
+                                <tr ng-repeat='i in user_data.transactions'>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="data-state data-state-approved"></div><span class="lead">{{i.wsc | number:6}}</span>
+                                        </div>
+                                    </td>
+                                    <td><span><span class="lead">{{i.wsc*i.cota | currency}}</span></span></td>
+                                    <td><span><span class="lead">${{i.cota | number:4}}</span></span></td>
+                                    <td class="d-none d-sm-table-cell tnx-date"><span class="sub sub-s2">{{i.data}}</span></td>
+                                    <td class="tnx-type"><span class="tnx-type-md badge badge-outline badge-success badge-md">Purchase</span></td>
+                                </tr>
+                            </tbody>
+                            <!-- tbody -->
+                        </table>
+                        <!-- .table -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="token-calculator card card-full-height">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h4 class="card-title">Token Calculation</h4>
+                            <p class="card-title-text">Enter amount to calculate token.</p>
+                        </div>
+                        <div class="token-calc">
+                            <div class="token-pay-amount">
+                                <input id="token-base-amount" class="input-bordered input-with-hint" type="text" value="1" ng-model='toCalc'>
+                                <div class="token-pay-currency"><a href="#" class="link ucap link-light toggle-tigger toggle-caret">BTC</a>
+                                </div>
+                            </div>
+                            <div class="token-received">
+                                <div class="token-eq-sign">=</div>
+                                <div class="token-received-amount">
+                                    <h5 class="token-amount">{{toCalc*config.cota/config.wise_cota | number:6}}</h5>
+                                    <div class="token-symbol">WSC</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="token-calc-note note note-plane"><em class="fas fa-info-circle text-light"></em><span class="note-text text-light">Amount calculated based current tokens price</span></div>
+                        <div class="token-buy"><button data-toggle="modal" data-target="#modalBTC" class="btn btn-primary">Buy Tokens</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="token-sale-graph card card-full-height">
+                    <div class="card-innr">
+                        <div class="card-head has-aside">
+                            <h4 class="card-title">Tokens Price Graph</h4>
+
+                        </div>
+                        <div class="chart-tokensale">
+                            <canvas id="canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- .col -->
+            <div class="col-xl-4 col-lg-5">
+                <div class="token-sales card card-full-height">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h4 class="card-title">Token Sales Progress</h4>
+                        </div>
+                        <ul class="progress-info">
+                            <li><span>Raised</span> {{config.raised | number : 0}} WSC</li>
+                            <li class="text-right"><span>TOTAL</span> 100,000,000 WSC</li>
+                        </ul>
+                        <div class="progress-bar">
+                            <div class="progress-hcap" data-percent="80" style="width: 80%;">
+                                <div>Hard cap <span>80,000,000</span></div>
+                            </div>
+                            <div class="progress-scap" data-percent="24" style="width: 24%;">
+                                <div>Soft cap <span>24,000,000</span></div>
+                            </div>
+                            <div class="progress-percent" data-percent="{{config.raised/100000000*100}}" style="width: {{config.raised/100000000*100}}%;"></div>
+                        </div><span class="card-sub-title mgb-0-5x">Sales END IN </span>
+                        <div class="countdown-clock" data-date="2019/05/07">
+                            <div><span class="countdown-time countdown-time-first">120</span><span class="countdown-text">Day</span></div>
+                            <div><span class="countdown-time">08</span><span class="countdown-text">Hour</span></div>
+                            <div><span class="countdown-time">30</span><span class="countdown-text">Min</span></div>
+                            <div><span class="countdown-time countdown-time-last">38</span><span class="countdown-text">Sec</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-bar">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-8">
+                <!-- <ul class="footer-links">
+                    <li><a href="#">Whitepaper</a></li>
+                    <li><a href="faq-page.html">FAQs</a></li>
+                    <li><a href="regular-page.html">Privacy Policy</a></li>
+                    <li><a href="regular-page.html">Terms of Condition</a></li>
+                </ul> -->
+            </div>
+            <div class="col-md-4 mt-2 mt-sm-0">
+                <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
+                    <div class="copyright-text">&copy; 2018 Wisecoin.</div>
+                    <!-- <div class="lang-switch relative"><a href="#" class="lang-switch-btn toggle-tigger">En <em class="ti ti-angle-up"></em></a>
+                        <div class="toggle-class dropdown-content dropdown-content-up">
+                            <ul class="lang-list">
+                                <li><a href="#">Fr</a></li>
+                                <li><a href="#">Bn</a></li>
+                                <li><a href="#">Lt</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalBTC">
+    <div class="modal-dialog modal-dialog-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Send bitcoin</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <h4>Send bitcoins to the address below and they will be automatically converted to wisecoin</h4>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{user_data.address}}" height="250px"><br><br>
+                    <input autocorrect="off" disabled="" class="form-control text-center" id="addressToCopy" value="{{user_data.address}}"><br>
+                    <button class="btn btn-warning" ng-click="copyAddress()">Copy address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
