@@ -4,7 +4,7 @@ if (window.mobile) {
 }else{
     window.api = "api/"
 }
-window.version = 0.2
+window.version = 0.3
 var app = angular.module('App', ['ui.router', 'ngStorage']);
 
 //App principal

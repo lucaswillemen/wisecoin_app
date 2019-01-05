@@ -52,7 +52,7 @@
                     <div class="card-innr">
                         <div class="card-head has-aside">
                             <h4 class="card-title">Transaction</h4>
-                            <div class="card-opt"><a href="transactions.html" class="link ucap">View ALL <em class="fas fa-angle-right ml-2"></em></a></div>
+                            <div class="card-opt"><a ui-sref="app.transaction" class="link ucap">View ALL <em class="fas fa-angle-right ml-2"></em></a></div>
                         </div>
                         <table class="table tnx-table">
                             <thead>
@@ -150,13 +150,9 @@
                                 <div>Soft cap <span>24,000,000</span></div>
                             </div>
                             <div class="progress-percent" data-percent="{{config.raised/100000000*100}}" style="width: {{config.raised/100000000*100}}%;"></div>
-                        </div><span class="card-sub-title mgb-0-5x">Sales END IN </span>
-                        <div class="countdown-clock" data-date="2019/05/07">
-                            <div><span class="countdown-time countdown-time-first">120</span><span class="countdown-text">Day</span></div>
-                            <div><span class="countdown-time">08</span><span class="countdown-text">Hour</span></div>
-                            <div><span class="countdown-time">30</span><span class="countdown-text">Min</span></div>
-                            <div><span class="countdown-time countdown-time-last">38</span><span class="countdown-text">Sec</span></div>
                         </div>
+                        <span class="card-sub-title mgb-0-5x">Sales END IN</span>
+                        <div class="countdown-clock" data-date="2019/05/07"></div>
                     </div>
                 </div>
             </div>

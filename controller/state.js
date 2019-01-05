@@ -76,7 +76,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('app.consierge', {
+            url: "/consierge",
+            views: {
+                "view": {
+                    templateUrl: "template/consierge.html?" + window.version,
+                    controller: "consierge"
+                }
+            }
+        })
         
-    $urlRouterProvider.otherwise("/login")
+    $urlRouterProvider.otherwise("/login") 
   
 })

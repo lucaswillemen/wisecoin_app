@@ -37,7 +37,7 @@
                 <ul class="navbar-menu">
                     <li><a ui-sref="app.home"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
                     <li><a ui-sref="app.transaction"><em class="ikon ikon-transactions"></em> Transactions</a></li>
-                    <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> Consierge</a></li>
+                    <li ng-show="user_data.corretor=='1'"><a ui-sref="app.consierge"><em class="ikon ikon-distribution"></em> Consierge</a></li>
                     
                 </ul>
             </div>
