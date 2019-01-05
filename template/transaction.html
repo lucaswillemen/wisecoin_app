@@ -1,0 +1,45 @@
+<div class="page-content">
+    <div class="container">
+        <div class="card content-area">
+            <div class="card-innr">
+                <div class="card-head">
+                    <h4 class="card-title">User Transactions</h4>
+                </div>
+                <table class="data-table dt-init user-tnx">
+                    <thead>
+                        <tr class="data-item data-head">
+                            <th class="data-col dt-tnxno">Tranx NO</th>
+                            <th class="data-col dt-token">Tokens</th>
+                            <th class="data-col dt-amount">Amount</th>
+                            <th class="data-col dt-usd-amount">PRICE</th>
+                            <th class="data-col dt-type">
+                                <div class="dt-type-text">Type</div>
+                            </th>
+                            <th class="data-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="data-item" ng-repeat="data in transactions">
+                            <td class="data-col dt-tnxno">
+                                <div class="d-flex align-items-center">
+                                    <div class="data-state data-state-approved"><span class="d-none">Approved</span></div>
+                                    <div class="fake-class"><span class="lead tnx-id">TNX{{data.id}}</span><span class="sub sub-date">{{data.data}}</span></div>
+                                </div>
+                            </td>
+                            <td class="data-col dt-token"><span class="lead token-amount">{{data.wsc}}</span><span class="sub sub-symbol">WSC</span></td>
+                            <td class="data-col dt-amount"><span class="lead amount-pay">{{data.wsc*data.cota | currency}}</span><span class="sub sub-symbol">USD </span></td>
+                            <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{data.cota}}</span><span class="sub sub-symbol">USD </span></td>
+
+                            <td ng-if="data.descricao=='buy'" class="data-col dt-type"><span class="dt-type-md badge badge-outline badge-success badge-md">Purchase</span></td>
+                            <td ng-if="data.descricao=='consierge'" class="data-col dt-type"><span class="dt-type-md badge badge-outline badge-warning badge-md">Bonus</span></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- .card-innr -->
+        </div>
+        <!-- .card -->
+    </div>
+    <!-- .container -->
+</div>

@@ -67,18 +67,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
-        .state('app.deposito', {
-            url: "/deposit",
+        .state('app.transaction', {
+            url: "/transaction",
             views: {
                 "view": {
-                    templateUrl: "template/deposito.html?" + window.version,
-                    controller: "deposito"
+                    templateUrl: "template/transaction.html?" + window.version,
+                    controller: "transaction"
                 }
             }
         })
         
     $urlRouterProvider.otherwise("/login")
-    if (!window.mobile) {
-        $locationProvider.html5Mode(true);
-    }
+  
 })

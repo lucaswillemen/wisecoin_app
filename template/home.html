@@ -27,8 +27,8 @@
                         <div class="col-md-6 text-center">
                             <div class="token-info"><img class="token-info-icon" src="images/logo-sm.png" alt="logo-sm">
                                 <div class="gaps-2x"></div>
-                                <h1 class="token-info-head text-light">1 BTC = {{config.cota/config.wise_cota | number:4}} USD</h1>
-                                <h1 class="token-info-head text-light">1 WSC = {{config.wise_cota | number:4}} WSC</h1>
+                                <h1 class="token-info-head text-light">1 BTC = {{config.cota/config.wise_cota | number:4}} WSC</h1>
+                                <h1 class="token-info-head text-light">1 WSC = {{config.wise_cota | number:4}} USD</h1>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -60,7 +60,7 @@
                                     <th>WSC Tokens</th>
                                     <th>Amount</th>
                                     <th>Quote</th>
-                                    <th class="">Date</th>
+                                    <th class="d-none d-sm-table-cell tnx-date">Date</th>
                                     <th class="tnx-type">
                                         <div class="tnx-type-text"></div>
                                     </th>
@@ -78,7 +78,8 @@
                                     <td><span><span class="lead">{{i.wsc*i.cota | currency}}</span></span></td>
                                     <td><span><span class="lead">${{i.cota | number:4}}</span></span></td>
                                     <td class="d-none d-sm-table-cell tnx-date"><span class="sub sub-s2">{{i.data}}</span></td>
-                                    <td class="tnx-type"><span class="tnx-type-md badge badge-outline badge-success badge-md">Purchase</span></td>
+                                    <td ng-if="i.descricao=='buy'" class="tnx-type"><span class="tnx-type-md badge badge-outline badge-success badge-md">Purchase</span></td>
+                                    <td ng-if="i.descricao=='consierge'" class="tnx-type"><span class="tnx-type-md badge badge-outline badge-warning badge-md">Bonus</span></td>
                                 </tr>
                             </tbody>
                             <!-- tbody -->
