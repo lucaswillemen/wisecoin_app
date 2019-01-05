@@ -4,9 +4,9 @@ app.controller('login', function($scope, $rootScope, $state, $httpParamSerialize
 	$scope.url = window.api+"auth/"
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-    // if ($localStorage.auth) {
-    //     $state.go("app.home")
-    // }
+    if ($localStorage.auth) {
+        $state.go("app.home")
+    }
 
 	
     $scope.$on('$viewContentLoaded', function() {
