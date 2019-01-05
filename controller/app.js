@@ -17,7 +17,7 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
 
 	$rootScope.logout = function(){
 		localStorage.clear()
-		location.href = "login"
+		location.href = "#!/login"
 	}
 
 
