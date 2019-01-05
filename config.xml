@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="app.wisecoin.com" version="0.2.4" versionCode = "24" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="app.wisecoin.com" version="0.2.5" versionCode = "25" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Wisecoin</name>
     <description>
         Wisecoin
@@ -18,6 +18,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="26" />
     <platform name="android">
         <icon src="images/icon.png"/>
         <allow-intent href="market:*" />
