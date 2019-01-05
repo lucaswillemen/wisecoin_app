@@ -1,6 +1,6 @@
 window.mobile = 1
 if (window.mobile) {
-    window.api = "https://coin.wiseminner.com/api/"
+    window.api = "https://wisecoin.app/api/"
 }else{
     window.api = "api/"
 }
@@ -17,7 +17,7 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
 
 	$rootScope.logout = function(){
 		localStorage.clear()
-		location.href = "#!/login"
+		location.href = location.pathname
 	}
 
 

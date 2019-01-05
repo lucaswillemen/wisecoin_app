@@ -1,9 +1,9 @@
 /*!
-Template :	TokenWiz - ICO User Dashboard
-Preset   :	Default
-Author	 :	Softnio
-Version	 :	1.0.3
-Updated	 :	11.30.2018
+Template :  TokenWiz - ICO User Dashboard
+Preset   :  Default
+Author   :  Softnio
+Version  :  1.0.3
+Updated  :  11.30.2018
 */
 
 @font-face {
@@ -1122,7 +1122,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 }
 
 .data-item {
-    background: #1d1d1d;
+    background: #fff;
     margin-bottom: 3px;
     border-radius: 4px;
     position: relative
@@ -2005,8 +2005,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .btn-primary:focus,
 .btn-primary:active {
     color: #1d1d1d;
-    background: #005fee;
-    border-color: #005fee
+    background: #ffbc00;
+    border-color: #ffbc00
 }
 
 .btn-primary-alt {
