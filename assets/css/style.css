@@ -1691,7 +1691,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 
 .btn {
     position: relative;
-    color: #1d1d1d;
+    color: #fff;
     font-weight: 500;
     padding: 8px 20px;
     font-size: 13px;
@@ -2004,7 +2004,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-    color: #1d1d1d;
+    color: #fff;
     background: #ffbc00;
     border-color: #ffbc00
 }
@@ -11453,8 +11453,8 @@ select.select-sm {
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
-    background-color: #0059df;
-    border-color: #0059df
+    background-color: #ffbc00;
+    border-color: #ffbc00
 }
 
 .btn-dark:not(:disabled):not(.disabled).active,
