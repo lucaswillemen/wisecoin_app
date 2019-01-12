@@ -1,6 +1,6 @@
 window.mobile = 1
 if (window.mobile) {
-    window.api = "https://wisecoin.app/api/"
+    window.api = "https://api.wisecoin.app/"
 }else{
     window.api = "api/"
 }
