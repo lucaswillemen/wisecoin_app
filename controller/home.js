@@ -3,10 +3,13 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
     $rootScope.title = "Dashboard"
     $scope.url = window.api + "home/"
     $scope.load_user()
-    $scope.loop = function(){
+    $scope.loop = function() {
         $scope.load_user()
-        setTimeout(function() {$scope.loop()}, 6000);
-    };$scope.loop()
+        setTimeout(function() {
+            $scope.loop()
+        }, 6000);
+    };
+    $scope.loop()
 
     $scope.toCalc = 1
 
@@ -111,14 +114,7 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
     $scope.load_chart()
 
 
-$scope.copyAddress = function() {
-    var copyText = document.getElementById("addressToCopy");
-    $("#addressToCopy").prop('disabled', false)
-    copyText.select();
-    document.execCommand("copy");
 
-    $("#addressToCopy").prop('disabled', true)
-}
 
 
 })

@@ -109,5 +109,13 @@ app.controller('buy', function($scope, $rootScope, $state, $stateParams, $httpPa
             });
         }
     }
+    $scope.copyAddress = function() {
+        var copyText = document.getElementById("addressToCopy");
+        $("#addressToCopy").prop('disabled', false)
+        copyText.select();
+        document.execCommand("copy");
+
+        $("#addressToCopy").prop('disabled', true)
+    }
 
 })
