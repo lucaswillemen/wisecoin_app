@@ -33,7 +33,7 @@ app.controller('buy', function($scope, $rootScope, $state, $stateParams, $httpPa
 
 
 
-    Mercadopago.setPublishableKey("TEST-51eba243-c2d9-495e-bf0c-052c7c2a8eb1");
+    Mercadopago.setPublishableKey("APP_USR-32ac0c61-13a6-4be0-befd-07b1f3760698");
 
     var mpResponseHandler = function(status, response) {
         $("#errorCodes").html("")
