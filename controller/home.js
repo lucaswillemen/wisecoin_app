@@ -5,7 +5,6 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
     $scope.load_user()
     $scope.loop = function(){
         $scope.load_user()
-
         setTimeout(function() {$scope.loop()}, 6000);
     };$scope.loop()
 

@@ -1,0 +1,164 @@
+
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="main-content col-lg-8">
+                <div class="content-area card">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h4 class="card-title">Profile Details</h4></div>
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Settings</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#password">Password</a></li>
+                        </ul>
+                        <!-- .nav-tabs-line -->
+                        <div class="tab-content" id="profile-details">
+                            <div class="tab-pane fade show active" id="personal-data">
+                                <form id="FormProfile">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="full-name" class="input-item-label">Login name</label>
+                                                <input class="input-bordered" type="text" id="full-name" name="full-name" ng-model="profile.nome" readonly="true">
+                                            </div>
+                                            <!-- .input-item -->
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="email-address" class="input-item-label">Email Address</label>
+                                                <input class="input-bordered" type="text" id="email-address" name="email-address" ng-model="profile.email"  value="info@softnio.com" required>
+                                            </div>
+                                            <!-- .input-item -->
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="mobile-number" class="input-item-label">Full name</label>
+                                                <input class="input-bordered" type="text" id="mobile-number" name="mobile-number" ng-model="profile.fullname" required>
+                                            </div>
+                                            <!-- .input-item -->
+                                        </div>
+                                        <!-- .col -->
+                                    </div>
+                                    <!-- .row -->
+                                    <div class="gaps-1x"></div>
+                                    <!-- 10px gap -->
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary">Update Profile</button>
+                                    </div>
+                                </form>
+                                <!-- form -->
+                            </div>
+                            <!-- .tab-pane -->
+                            <div class="tab-pane fade" id="settings">
+                                <div class="pdb-1-5x">
+                                    <h5 class="card-title card-title-sm text-dark">Consierge Settings</h5> </div>
+                                <div class="input-item">
+                                    <input id="corretor" type="checkbox" class="input-switch input-switch-sm" ng-model='data_setting.corretor' ng-true-value="1" ng-false-value="0" ng-change="update_consierge()">
+                                    <label for="corretor">Enable account as consierge</label>
+                                </div>
+                                <div class="input-item">
+                                    <input type="checkbox" class="input-switch input-switch-sm" id="bonus" ng-model='data_setting.bonus_btc' ng-true-value="1" ng-false-value="0" ng-change="update_bonus()">
+                                    <label for="bonus">Convert bonus bitcoin to wisecoin</label>
+                                </div>
+                                <div class="pdb-1-5x">
+                                    <h5 class="card-title card-title-sm text-dark">Manage Notification</h5> </div>
+                                <div class="input-item">
+                                    <input type="checkbox" class="input-switch input-switch-sm" id="latest-news" checked>
+                                    <label for="latest-news">Notify me by email about sales and latest news</label>
+                                </div>
+                                <div class="input-item">
+                                    <input type="checkbox" class="input-switch input-switch-sm" id="activity-alert" checked>
+                                    <label for="activity-alert">Alert me by email for unusual activity.</label>
+                                </div>
+                            </div>
+                            <!-- .tab-pane -->
+                            <div class="tab-pane fade" id="password">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-item input-with-label">
+                                            <label for="old-pass" class="input-item-label">Old Password</label>
+                                            <input class="input-bordered" type="password" id="old-pass" name="old-pass">
+                                        </div>
+                                        <!-- .input-item -->
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-item input-with-label">
+                                            <label for="new-pass" class="input-item-label">New Password</label>
+                                            <input class="input-bordered" type="password" id="new-pass" name="new-pass">
+                                        </div>
+                                        <!-- .input-item -->
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md-6">
+                                        <div class="input-item input-with-label">
+                                            <label for="confirm-pass" class="input-item-label">Confirm New Password</label>
+                                            <input class="input-bordered" type="password" id="confirm-pass" name="confirm-pass">
+                                        </div>
+                                        <!-- .input-item -->
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                                <div class="note note-plane note-info pdb-1x"><em class="fas fa-info-circle"></em>
+                                    <p>Password should be minmum 8 letter and include lower and uppercase letter.</p>
+                                </div>
+                                <div class="gaps-1x"></div>
+                                <!-- 10px gap -->
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                    <button class="btn btn-primary">Update</button>
+                                    <div class="gaps-2x d-sm-none"></div><span class="text-success"><em class="ti ti-check-box"></em>  Changed Password</span></div>
+                            </div>
+                            <!-- .tab-pane -->
+                        </div>
+                        <!-- .tab-content -->
+                    </div>
+                    <!-- .card-innr -->
+                </div>
+                <!-- .card -->
+                <div class="content-area card">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h4 class="card-title">Two-Factor Verification</h4></div>
+                        <p>Two-factor authentication is a method for protection your web account. When it is activated you need to enter not only your password, but also a special code. You can receive this code by in mobile app. Even if third person will find your password, then can't access with that code.</p>
+                        <div class="d-sm-flex justify-content-between align-items-center pdt-1-5x"><span class="text-light ucap d-inline-flex align-items-center"><span class="mb-0"><small>Current Status:</small></span> <span class="badge badge-disabled ml-2">Disabled</span></span>
+                            <div class="gaps-2x d-sm-none"></div>
+                            <button class="order-sm-first btn btn-primary">Enable 2FA</button>
+                        </div>
+                    </div>
+                    <!-- .card-innr -->
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- .col -->
+            <div class="aside sidebar-right col-lg-4">
+                <div class="account-info card">
+                    <div class="card-innr">
+                        <h6 class="card-title card-title-sm">Your Account Status</h6>
+                        <ul class="btn-grp">
+                            <li><a href="#" class="btn btn-auto btn-xs btn-success">Email Verified</a></li>
+                            <li><a href="#" class="btn btn-auto btn-xs btn-warning">KYC Pending</a></li>
+                        </ul>
+                        <div class="gaps-2-5x"></div>
+                        <h6 class="card-title card-title-sm">Receiving Wallet</h6>
+                        <div class="d-flex justify-content-between"><span><span style="font-size: 14px;">{{user_data.wisecoin_address}}</span></div>
+                    </div>
+                </div>
+                <div class="referral-info card">
+                    <div class="card-innr">
+                        <h6 class="card-title card-title-sm">Earn with Referral</h6>
+                        <p class=" pdb-0-5x">Invite your friends &amp; family and receive a <strong><span class="text-primary">bonus - 15%</span> of the value of contribution.</strong></p>
+                        <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em class="fas fa-link"></em>
+                            <input type="text" class="copy-address" value="https://demo.themenio.com/ico?ref=7d264f90653733592" disabled>
+                            <button class="copy-trigger copy-clipboard" data-clipboard-text="https://demo.themenio.com/ico?ref=7d264f90653733592"><em class="ti ti-files"></em></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ if (window.mobile) {
 }else{
     window.api = "api/"
 }
-window.version = 0.3
+window.version = 0.4
 var app = angular.module('App', ['ui.router', 'ngStorage']);
 
 //App principal
@@ -15,10 +15,10 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
     }, 1000);
 
 
-	$rootScope.logout = function(){
-		localStorage.clear()
-		location.href = location.pathname
-	}
+    $rootScope.logout = function(){
+        localStorage.clear()
+        location.href = location.pathname
+    }
 
 
 
@@ -39,6 +39,8 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
              })
          });
     }
+
+    
     $rootScope.load_user = function() {
     $http.get(window.api + "home/")
         .then(function(res) {
@@ -48,7 +50,6 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
             angular.forEach(res.data.transactions, function(k,v){
                 $rootScope.cont += k.wsc*k.cota
             })
-            console.log($rootScope.cont)
             $rootScope.starttemp()
 
 

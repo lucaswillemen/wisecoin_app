@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="app.wisecoin.com" version="0.2.8" versionCode = "28" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="app.wisecoin.com" version="0.2.9" versionCode = "29" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Wisecoin</name>
     <description>
-        Wisecoin
+        Wisecoin, a smart crypto currency
     </description>
-    <author email="contato@mitz.com.br" href="https://bitmi.com.br">
-        Wisecoin
+    <author email="suport@wisecoin.app" href="https://wisecoin.app">
+        WiseCorp, LLC
     </author>
     <content src="index.html" />
     <splash src="images/icon.png" />

@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="token-calc-note note note-plane"><em class="fas fa-info-circle text-light"></em><span class="note-text text-light">Amount calculated based current tokens price</span></div>
-                        <div class="token-buy"><button data-toggle="modal" data-target="#modalBTC" class="btn btn-primary">Buy Tokens</button></div>
+                        <div class="token-buy"><a ui-sref="app.buy" class="btn btn-primary">Buy Tokens</a></div>
                     </div>
                 </div>
             </div>
@@ -160,24 +160,3 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="modalBTC">
-    <div class="modal-dialog modal-dialog-sm modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Send bitcoin</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="text-center">
-                    <h4>Send bitcoins to the address below and they will be automatically converted to wisecoin</h4>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{user_data.address}}" height="250px"><br><br>
-                    <input autocorrect="off" disabled="" class="form-control text-center" id="addressToCopy" value="{{user_data.address}}"><br>
-                    <button class="btn btn-warning" ng-click="copyAddress()">Copy address</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

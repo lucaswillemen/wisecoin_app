@@ -1,0 +1,202 @@
+<style type="text/css">
+    .small, small {
+    color: red;
+}
+</style>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-lg-none"><a href="#" data-toggle="modal" data-target="#add-wallet" class="btn btn-danger btn-xl btn-between w-100 mgb-1-5x">Add your wallet address before buy <em class="ti ti-arrow-right"></em></a>
+                    <div class="gaps-1x mgb-0-5x d-lg-none d-none d-sm-block"></div>
+                </div>
+                <div class="content-area card">
+                    <div class="card-innr">
+                        <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 1</span>
+                            <h4 class="card-title">Choose currency and calculate WSC tokens price</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>You can buy our WSC tokens using BTC or USD to become part of our project.</p>
+                        </div>
+                        <div class="token-currency-choose">
+                            <div class="row guttar-15px">
+                                <div class="col-6">
+                                    <div class="pay-option">
+                                        <input class="pay-option-check" type="radio" id="paybtc" name="payOption">
+                                        <label class="pay-option-label" for="paybtc"><span class="pay-title"><em class="pay-icon cf cf-btc"></em><span class="pay-cur">BTC</span></span><span class="pay-amount">{{config.wise_cota/config.cota | number:8}}</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pay-option">
+                                        <input class="pay-option-check" type="radio" id="payusd" name="payOption">
+                                        <label class="pay-option-label" for="payusd"><span class="pay-title"><em class="pay-icon fas fa-dollar-sign"></em><span class="pay-cur">USD</span></span><span class="pay-amount">{{config.wise_cota | number:4}}</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 2</span>
+                            <h4 class="card-title">Token Sales Progress</h4>
+                        </div>
+                        <div class="token-sales card card-full-height">
+                            <div class="card-head">
+                            </div>
+                            <ul class="progress-info">
+                                <li><span>Raised</span> {{config.raised | number : 0}} WSC</li>
+                                <li class="text-right"><span>TOTAL</span> 100,000,000 WSC</li>
+                            </ul>
+                            <div class="progress-bar">
+                                <div class="progress-hcap" data-percent="80" style="width: 80%;">
+                                    <div>Hard cap <span>80,000,000</span></div>
+                                </div>
+                                <div class="progress-scap" data-percent="24" style="width: 24%;">
+                                    <div>Soft cap <span>24,000,000</span></div>
+                                </div>
+                                <div class="progress-percent" data-percent="{{config.raised/100000000*100}}" style="width: {{config.raised/100000000*100}}%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 3</span>
+                            <h4 class="card-title">Make a payment</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>To get tokens please make a payment. You can send payment directly to our address or you may pay online. Once you paid, you will receive an email about the successfull deposit. </p>
+                        </div>
+                        <div class="pay-buttons">
+                            <div class="pay-button"><button data-toggle="modal" data-target="#modalBTC" class="btn btn-light-alt btn-between w-100">Get Address for Payment <em class="ti ti-wallet"></em></button></div>
+                            <div class="pay-button-sap">or</div>
+                            <div class="pay-button"><button data-toggle="modal" data-target="#modalCard" class="btn btn-primary btn-between w-100">Online Payment with Card <em class="ti ti-credit-card"></em></a></div>
+                        </div>
+                        <div class="pay-notes">
+                            <div class="note note-plane note-light note-md font-italic"><em class="fas fa-info-circle"></em>
+                                <p>Tokens will appear in your account after payment successfully made and approved by our team.
+                                    <br class="d-none d-lg-block"> Please note that, WSC tokens will distributed end of ICO Token Sales. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalBTC">
+    <div class="modal-dialog modal-dialog-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Send bitcoin</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <h4>Send bitcoins to the address below and they will be automatically converted to wisecoin</h4>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{user_data.address}}" height="250px"><br><br>
+                    <input autocorrect="off" disabled="" class="form-control text-center" id="addressToCopy" value="{{user_data.address}}"><br>
+                    <button class="btn btn-warning" ng-click="copyAddress()">Copy address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalCard">
+    <div class="modal-dialog modal-dialog-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Buy Wisecoin with credid card</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form-mp" name="form-mp">
+                    <input data-checkout="docType" type="hidden" value="CPF" />
+                    <input class="input-bordered" type="hidden" data-checkout="docNumber" value="12100383744">
+                    <!-- .step-head -->
+                    <div class="note note-plane note-light-alt note-md pdb-1x"><em class="fas fa-info-circle"></em>
+                        <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="token-currency-choose">
+                                <div class="row guttar-15px">
+                                    <div class="col-3">
+                                        <div class="pay-option">
+                                            <input class="pay-option-check" type="radio" id="pay100" name="payValue" ng-change="calcAmount()" ng-model="wise_value" ng-value="1000" required>
+                                            <label class="pay-option-label" for="pay100"><span class="pay-title"><span class="pay-cur">WSC</span></span><span class="pay-amount">1k</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="pay-option">
+                                            <input class="pay-option-check" type="radio" id="pay200" name="payValue" ng-change="calcAmount()" ng-model="wise_value" ng-value="2000">
+                                            <label class="pay-option-label" for="pay200"><span class="pay-title"><span class="pay-cur">WSC</span></span><span class="pay-amount">2k</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="pay-option">
+                                            <input class="pay-option-check" type="radio" id="pay500" name="payValue" ng-change="calcAmount()" ng-model="wise_value" ng-value="5000">
+                                            <label class="pay-option-label" for="pay500"><span class="pay-title"><span class="pay-cur">WSC</span></span><span class="pay-amount">5k</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="pay-option">
+                                            <input class="pay-option-check" type="radio" id="pay1000" name="payValue" ng-change="calcAmount()" ng-model="wise_value" ng-value="10000">
+                                            <label class="pay-option-label" for="pay1000"><span class="pay-title"><span class="pay-cur">WSC</span></span><span class="pay-amount">10k</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12" ng-if="wise_amount">
+                            <div class="form-group">
+                            <h3>USD Amount {{wise_amount | currency}}</h3> 
+                        </div>
+                        </div><br>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="input-item-label">Card holder name <span class="text-danger">*</span></label>
+                                <input class="input-bordered date-picker" type="text" data-checkout="cardholderName" name="cardholderName" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="input-item-label">Card Number <span class="text-danger">*</span></label>
+                                <input class="input-bordered" type="number" data-checkout="cardNumber" name="cardNumber" ng-keyup="verificarBandeira()" required>
+                                <div id="cardThumb"></div>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+                        <!-- .col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="input-item-label">CVC<span class="text-danger">*</span></label>
+                                <input class="input-bordered" type="text" data-checkout="securityCode" name="securityCode" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+                        <!-- .col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="input-item-label">Expiration Month (MM) <span class="text-danger">*</span></label>
+                                <input class="input-bordered" type="text" data-checkout="cardExpirationMonth" name="cardExpirationMonth" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+                        <!-- .col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="input-item-label">Expiration Year (YY) <span class="text-danger">*</span></label>
+                                <input class="input-bordered" type="text" data-checkout="cardExpirationYear" name="cardExpirationYear" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+                        <!-- .col -->
+                    </div><p id="errorCodes" style="color: red"></p>
+                    <button class="btn btn-primary btn-block">Process for Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

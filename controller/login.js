@@ -27,7 +27,7 @@ app.controller('login', function($scope, $rootScope, $state, $httpParamSerialize
             if (response.status === "connected") {
                 console.log(response.authResponse.accessToken)
                 var token = {token:response.authResponse.accessToken}
-                $http.post('api/auth/facebook',$httpParamSerializerJQLike(token))
+                $http.post($scope.url+'/facebook',$httpParamSerializerJQLike(token))
                 .then(function(res){
                     $localStorage.auth = res.data
                     $state.go("app.home")

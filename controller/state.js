@@ -85,7 +85,35 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('app.profile', {
+            url: "/profile",
+            views: {
+                "view": {
+                    templateUrl: "template/profile.html?" + window.version,
+                    controller: "profile"
+                }
+            }
+        })
+        .state('app.card', {
+            url: "/card",
+            views: {
+                "view": {
+                    templateUrl: "template/card.html?" + window.version,
+                    controller: "card"
+                }
+            }
+        })
+        .state('app.buy', {
+            url: "/buy",
+            views: {
+                "view": {
+                    templateUrl: "template/buy.html?" + window.version,
+                    controller: "buy"
+                }
+            }
+        })
         
     $urlRouterProvider.otherwise("/login") 
+    
   
 })
