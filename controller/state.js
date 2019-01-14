@@ -94,15 +94,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
-        .state('app.card', {
-            url: "/card",
-            views: {
-                "view": {
-                    templateUrl: "template/card.html?" + window.version,
-                    controller: "card"
-                }
-            }
-        })
         .state('app.buy', {
             url: "/buy",
             views: {
