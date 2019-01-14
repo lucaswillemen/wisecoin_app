@@ -36,6 +36,7 @@ app.controller('buy', function($scope, $rootScope, $state, $stateParams, $httpPa
     Mercadopago.setPublishableKey("APP_USR-32ac0c61-13a6-4be0-befd-07b1f3760698");
 
     var mpResponseHandler = function(status, response) {
+        console.log(response)
         $("#errorCodes").html("")
         if (status === 400) {
             angular.forEach(response.cause, function(v){

@@ -44,9 +44,9 @@
                             </div>
                             <div class="referral-form">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="mb-0 font-bold">Referral URL</h5><a href="#" class="link link-primary link-ucap">See Your referral</a></div>
+                                    <h5 class="mb-0 font-bold">Referral URL</h5><a ui-sref="app.transaction" class="link link-primary link-ucap">See Your referral</a></div>
                                 <div class="copy-wrap mgb-1-5x mgt-1-5x"><span class="copy-feedback"></span><em class="fas fa-link"></em>
-                                    <input type="text" class="copy-address" value="https://wisecoin.app/consierge/{{user_data.nome}}" disabled><button class="copy-trigger copy-clipboard" data-clipboard-text="https://demo.themenio.com/ico?ref=7d264f90653733592"><em class="ti ti-files"></em></button>
+                                    <input type="text" class="copy-address" id="addressToCopy" value="https://wallet.wisecoin.app/consierge/{{user_data.nome}}" disabled><button class="copy-trigger copy-clipboard" ng-click="copyAddress()"><em class="ti ti-files"></em></button>
                                    
                                 </div>
                                 <!-- .copy-wrap -->
