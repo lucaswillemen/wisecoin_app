@@ -1,4 +1,8 @@
-
+<style type="text/css">
+    .nav-link{
+        cursor: pointer;
+    }
+</style>
 <div class="page-content">
     <div class="container">
         <div class="row">
@@ -8,9 +12,9 @@
                         <div class="card-head">
                             <h4 class="card-title">Profile Details</h4></div>
                         <ul class="nav nav-tabs nav-tabs-line" role="tablist">
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Settings</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#password">Password</a></li>
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" data-target="#personal-data">Personal Data</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#settings">Settings</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#password">Password</a></li>
                         </ul>
                         <!-- .nav-tabs-line -->
                         <div class="tab-content" id="profile-details">
@@ -111,7 +115,7 @@
                                 <!-- 10px gap -->
                                 <div class="d-sm-flex justify-content-between align-items-center">
                                     <button class="btn btn-primary">Update</button>
-                                    <div class="gaps-2x d-sm-none"></div><span class="text-success"><em class="ti ti-check-box"></em>  Changed Password</span></div>
+                                </div>
                             </div>
                             <!-- .tab-pane -->
                         </div>
