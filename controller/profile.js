@@ -69,6 +69,22 @@ app.controller('profile', function($scope, $rootScope, $state, $stateParams, $ht
                     }
                 })
         })
+
+        $('#FormPassword').formValidation().on('success.form.fv', function(e) {
+            e.preventDefault();
+            $http.post($scope.url + "password", $httpParamSerializerJQLike($scope.password))
+                .then(function(res) {
+                    swal("Ready", "Your password has been updated!", "success");
+                    $scope.load_user()
+                }, function(res) {
+                    switch (res.status) {
+                        case 403:
+                            swal("Oops...", "Wrong password!", "warning");
+                            break;
+
+                    }
+                })
+        })
     })
     $scope.copyAddress = function() {
         var copyText = document.getElementById("addressToCopy");

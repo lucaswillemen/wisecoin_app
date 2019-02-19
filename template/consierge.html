@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-md-3 align-self-center text-xl-right">
-                                    <div class="pdb-1x"><span class="schedule-bonus">20% Bonus</span></div>
+                                    <div class="pdb-1x"><span class="schedule-bonus">15% Bonus</span></div>
                                 </div>
                             </div>
                         </div>
@@ -39,13 +39,13 @@
                         <div class="card-head">
                             <h5 class="card-title card-title-md">Invite your friends and family and receive free tokens</h5></div>
                         <div class="card-text">
-                            <p>Each member have a unique WSC referral link to share with friends and family and receive a <strong>bonus - 20% of the value of their contribution</strong>. If any one sign-up with this link, will be added to your referral program. The referral link may be used during a token sales running.</p>
+                            <p>Each member have a unique WSC referral link to share with friends and family and receive a <strong>bonus - 15% of the value of their contribution</strong>. If any one sign-up with this link, will be added to your referral program. The referral link may be used during a token sales running.</p>
                         </div>
                         <div class="referral-form">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0 font-bold">Referral URL</h5><a ui-sref="app.transaction" class="link link-primary link-ucap">See Your referral</a></div>
                             <div class="copy-wrap mgb-1-5x mgt-1-5x"><span class="copy-feedback"></span><em class="fas fa-link"></em>
-                                <input type="text" class="copy-address" id="addressToCopy" value="https://wallet.wisecoin.app/consierge/{{user_data.nome}}" disabled><button class="copy-trigger copy-clipboard" ng-click="copyAddress()"><em class="ti ti-files"></em></button>
+                                <input style="background: #ebebe4;" type="text" class="copy-address" id="addressToCopy" value="https://wallet.wisecoin.app/consierge/{{user_data.nome}}" disabled><button class="copy-trigger copy-clipboard" ng-click="copyAddress()"><em class="ti ti-files"></em></button>
                                
                             </div>
                             <!-- .copy-wrap -->
@@ -69,10 +69,10 @@
                         <div class="token-balance token-balance-s2">
                             <h6 class="card-sub-title">Your Bonus</h6>
                             <ul class="token-balance-list">
-                                <li class="token-balance-sub"><span class="lead">{{bonus.wsc | number:4}}</span><span class="sub">WSC</span></li>
-                                <li class="token-balance-sub"><span class="lead">{{bonus.btc | number:6}}</span><span class="sub">BTC</span></li>
+                                <li class="token-balance-sub"><span class="lead">{{bonus.bonus | number:4}}</span><span class="sub">WSC</span></li>
                             </ul>
                         </div>
+                            <button class="btn btn-success btn-block" ng-click="redeem()">Redeem bonus</button>
                     </div>
                 </div>
                 <div class="token-sales card">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="token-bonus-current">
                             <div class="fake-class"><span class="card-sub-title">Current Bonus</span>
-                                <div class="h3 mb-0">20%</div>
+                                <div class="h3 mb-0">15%</div>
                             </div>
                             <div class="token-bonus-date">End at
                                 <br> 07 May, 2019</div>

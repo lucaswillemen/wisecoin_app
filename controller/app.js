@@ -4,7 +4,7 @@ if (window.mobile) {
 }else{
     window.api = "api/"
 }
-window.version = 0.4
+window.version = 0.3
 var app = angular.module('App', ['ui.router', 'ngStorage']);
 
 //App principal
@@ -15,10 +15,10 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
     }, 1000);
 
 
-    $rootScope.logout = function(){
-        localStorage.clear()
-        location.href = location.pathname
-    }
+	$rootScope.logout = function(){
+		localStorage.clear()
+        location.href = "login"
+	}
 
 
 

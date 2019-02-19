@@ -11,13 +11,22 @@ app.controller('consierge', function($scope, $rootScope, $state, $stateParams, $
         setTimeout(function() {$scope.loop()}, 6000);
     };$scope.loop()
 
-    $http.get(window.api + "consierge/")
-        .then(function(res) {
-            $scope.bonus = res.data
+    $scope.load_bonus = function(){
+        $http.get(window.api + "consierge/")
+            .then(function(res) {
+                $scope.bonus = res.data            
+            })        
+    }; $scope.load_bonus()
 
-
-            
+    $scope.redeem = function(){
+        $http.post(window.api + "consierge/redeem")
+        .then(function(res){
+            console.log(res.data)
+            $scope.load_user()
+            $scope.load_bonus()
+            swal("Ready", "You rescued "+res.data+" wisecoin.", "success");
         })
+    }
     $scope.copyAddress = function() {
     var copyText = document.getElementById("addressToCopy");
     $("#addressToCopy").prop('disabled', false)

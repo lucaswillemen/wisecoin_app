@@ -74,7 +74,6 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                    beginAtZero: !0,
                                     fontSize: 12,
                                     callback: function(value, index, values) {
                                         return $filter('number')(value, "4 ") + " USD"
