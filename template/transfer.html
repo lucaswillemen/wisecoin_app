@@ -1,0 +1,97 @@
+
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="main-content col-lg-12">
+                <div class="content-area card">
+                    <div class="card-innr">
+                        <div class="card-head"><span class="card-sub-title text-primary font-mid">Token Transfer</span>
+                            <h4 class="card-title">Transfer tokens to another address</h4></div>
+                        <div class="card-text">
+                            <p>Enter your amount, you would like to contribute and calculate the amount of token you will received. The calculator helps to convert required currency to tokens.</p>
+                        </div>
+                        <div class="token-overview-wrap">
+                            <div class="token-overview">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 text-center">
+                                        <div class="token-bonus token-bonus-sale">
+                                            <span class="token-overview-title">Your wallet</span><br>
+                                            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{user_data.address}}" height="250px"><br>
+                                            <span class="token-overview-value bonus-on-sale">{{user_data.wisecoin_address}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="note note-plane note-danger note-sm pdt-1x pl-0">
+                                <p>Do not use this address to send bitcoins.</p>
+                            </div>
+                        </div>
+                        <div class="pay-buttons pt-0">
+                            <div class="pay-button"><button  data-toggle="modal" data-target="#modalTransfer" class="btn btn-light-alt btn-block btn-between w-100">Make a transfer <em class="ti ti-wallet"></em></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalTransfer">
+    <div class="modal-dialog modal-dialog-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Transfer tokens to another address</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formTransfer" name="form-mp">
+                    <div style="display: none">
+                    <input  type="text" name="email" />
+                    <input  type="password" name="senha">
+                    </div>
+                    <!-- .step-head -->
+                    <div class="note note-plane note-light-alt note-md pdb-1x"><em class="fas fa-info-circle"></em>
+                        <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="input-item-label">Wisecoin Address <span class="text-danger">*</span></label>
+                                <input class="input-bordered date-picker" ng-model="transfer.address" type="text" name="address" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="input-item-label">Amout of Wisecoin <span class="text-danger">*</span></label>
+                                <input class="input-bordered date-picker" ng-model="transfer.amount"  type="number" name="amount" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="input-item-label">Account password <span class="text-danger">*</span></label>
+                                <input class="input-bordered date-picker" ng-model="transfer.password"  type="password" name="password" required>
+                            </div>
+                            <!-- .input-item -->
+                        </div>
+
+                        <div class="col-md-12" ng-if="transfer.amount">
+                            <div class="form-group">
+                                <h3>USD Amount {{transfer.amount*config.wise_cota | currency}}</h3> 
+                            </div>
+                        </div>
+                        <br>
+                        <!-- .col -->
+                    </div><p id="errorCodes" style="color: red"></p>
+                    <button class="btn btn-primary btn-block">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
