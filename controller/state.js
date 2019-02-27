@@ -103,6 +103,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('app.transfer', {
+            url: "/transfer",
+            views: {
+                "view": {
+                    templateUrl: "template/transfer.html?" + window.version,
+                    controller: "transfer"
+                }
+            }
+        })
         
     $urlRouterProvider.otherwise("/login") 
     
